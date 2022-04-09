@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.myfood.dao.FoodOtherDao">
+    <resultMap id="BaseResultMap" type="com.example.myfood.entity.FoodOther">
+        <id column="food_name" jdbcType="INTEGER" property="foodName" />
+        <result column="food_make" jdbcType="VARCHAR" property="foodMake" />
+        <result column="food_price" jdbcType="INTEGER" property="foodPrice" />
+        <result column="food_sale" jdbcType="INTEGER" property="foodSale" />
+    </resultMap>
+    <sql id="Base_Column_List">
+    food_name, food_make, food_price, food_sale
+  </sql>
+    <select id="selectFoodOtherByFoodName" resultType="java.lang.String">
+        select
+        <include refid="Base_Column_List" />
+        from food_other
+        where food_name = #{foodName,jdbcType=VARCHAR}
+    </select>
+    <select id="selectFoodOthers" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from food_other
+    </select>
+</mapper>
