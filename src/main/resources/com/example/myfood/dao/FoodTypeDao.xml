@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.myfood.dao.FoodTypeDao">
+    <resultMap id="BaseResultMap" type="com.example.myfood.entity.FoodType">
+        <result column="type_id" jdbcType="INTEGER" property="typeId" />
+        <result column="type_name" jdbcType="VARCHAR" property="typeName" />
+    </resultMap>
+    <sql id="Base_Column_List">
+    type_id, type_name
+  </sql>
+    <select id="selectFoodTypes" resultType="com.example.myfood.entity.FoodType">
+        select
+        a.food_name
+        from food a,food_type b
+        where a.type_id = b.type_id
+    </select>
+    <select id="selectFoodTypeByTypeId" resultType="java.util.Map">
+        select
+        type_name
+        from food_type
+        where type_id #{typeId,jdbcType=INTEGER}
+    </select>
+</mapper>
