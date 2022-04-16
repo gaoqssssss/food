@@ -16,4 +16,6 @@ logging:
   level:
     com.baomidou.mybatisplus.samples.mysql: debug
 
+swagger:
+  enable: true
 

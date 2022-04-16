@@ -1,6 +1,7 @@
 package com.example.myfood.dao;
 
 import com.example.myfood.entity.Food;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -12,4 +13,6 @@ public interface FoodDao {
     List<Food> selectFoods();
 
     Map selectFoodByPrimaryKey(Integer foodId);
+
+    List<Food> selectByName(@Param("name") String name);
 }

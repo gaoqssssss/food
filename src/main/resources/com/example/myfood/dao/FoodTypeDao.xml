@@ -10,7 +10,7 @@
   </sql>
     <select id="selectFoodTypes" resultType="com.example.myfood.entity.FoodType">
         select
-        a.food_name
+        a.food_name,b.*
         from food a,food_type b
         where a.type_id = b.type_id
     </select>
