@@ -39,12 +39,12 @@
 //        return "users";
 //    }
 //
-//    public String login(HttpServletRequest request, HttpServletResponse response) {
-//        // 收参
-//        String username = request.getParameter("username");
-//        String password = request.getParameter("password");
-//        // 登录
-//        ResultVO resultVO = userService.login(username, password);
-//        return "";
-//    }
+////    public String login(HttpServletRequest request, HttpServletResponse response) {
+////        // 收参
+////        String username = request.getParameter("username");
+////        String password = request.getParameter("password");
+////        // 登录
+////        ResultVO resultVO = userService.login(username, password);
+////        return "";
+////    }
 //}

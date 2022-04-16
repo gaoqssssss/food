@@ -5,8 +5,15 @@ spring:
     username: root
     password: gao199892
     # Logger Config
+
+  web:
+    resources:
+      static-locations: file:D/foodsPicture/userpicture
+
 server:
   port: 8081
 logging:
   level:
     com.baomidou.mybatisplus.samples.mysql: debug
+
+

@@ -10,7 +10,7 @@
     <sql id="Base_Column_List">
     food_name, food_make, food_price, food_sale
   </sql>
-    <select id="selectFoodOtherByFoodName" resultType="java.lang.String">
+    <select id="selectFoodOtherByFoodName" resultType="java.util.Map">
         select
         <include refid="Base_Column_List" />
         from food_other

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class FoodServiceImpl implements FoodService {
@@ -19,7 +20,7 @@ public class FoodServiceImpl implements FoodService {
     public List<Food> queryFoods() { return foodDao.selectFoods();}
 
     @Override
-    public int queryFoodByPrimaryKey(Integer foodId) {
-        return foodDao.selectFoodByPrimaryKey();
+    public Map queryFoodByPrimaryKey(Integer foodId) {
+        return foodDao.selectFoodByPrimaryKey(foodId);
     }
 }

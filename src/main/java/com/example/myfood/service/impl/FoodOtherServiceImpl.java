@@ -7,13 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class FoodOtherServiceImpl implements FoodOtherService {
     @Autowired
     private FoodOtherDao foodOtherDao;
     @Override
-    public int queryFoodOtherByFoodName(String foodName) {
+    public Map queryFoodOtherByFoodName(String foodName) {
         return foodOtherDao.selectFoodOtherByFoodName(foodName);
     }
 

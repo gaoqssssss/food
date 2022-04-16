@@ -4,9 +4,10 @@ import com.example.myfood.entity.Food;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 public interface FoodService {
     List<Food> queryFoods();
-    int queryFoodByPrimaryKey(Integer foodId);
+    Map queryFoodByPrimaryKey(Integer foodId);
 
 }

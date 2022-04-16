@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserService {
     public int queryUserById(Integer userId) {
         return userDao.selectUserByPrimaryKey(userId);
     }
-
+//
 //    @Override
 //    public ResultVO login(String userName, String password) {
 //        User user = userDao.findUserByUserName(userName);

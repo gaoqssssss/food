@@ -1,12 +1,12 @@
 package com.example.myfood.service;
 
 import com.example.myfood.entity.FoodOther;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 public interface FoodOtherService {
-    int queryFoodOtherByFoodName(String foodName);
+    Map queryFoodOtherByFoodName(String foodName);
     List<FoodOther> queryFoodOthers();
 
 }

@@ -18,7 +18,7 @@
         <include refid="Base_Column_List" />
         from food
     </select>
-    <select id="selectFoodByPrimaryKey" resultMap="BaseResultMap">
+    <select id="selectFoodByPrimaryKey" resultType="java.util.Map">
         select
         <include refid="Base_Column_List" />
         from food
