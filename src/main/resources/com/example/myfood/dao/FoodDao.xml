@@ -10,6 +10,18 @@
         <result column="food_pay" jdbcType="VARCHAR" property="foodPay" />
         <result column="food_picture" jdbcType="INTEGER" property="foodPicture" />
     </resultMap>
+
+    <resultMap id="FoodDetailMap" type="com.example.myfood.entity.FoodDetail">
+        <result column="food_id" jdbcType="INTEGER" property="foodId" />
+        <result column="food_name" jdbcType="VARCHAR" property="foodName" />
+        <result column="type_id" jdbcType="INTEGER" property="typeId" />
+        <result column="food_message" jdbcType="VARCHAR" property="foodMessage" />
+        <result column="food_click" jdbcType="INTEGER" property="foodClick" />
+        <result column="food_pay" jdbcType="VARCHAR" property="foodPay" />
+        <result column="food_picture" jdbcType="INTEGER" property="foodPicture" />
+        <result column="type_name" jdbcType="VARCHAR" property="typeName" />
+    </resultMap>
+
     <sql id="Base_Column_List">
     food_id, food_name, type_id, food_message, food_click, food_pay, food_picture
   </sql>
@@ -23,5 +35,13 @@
         <include refid="Base_Column_List" />
         from food
         where food_id = #{foodId,jdbcType=INTEGER}
+    </select>
+
+
+    <select id="selectFoodByType" resultMap="FoodDetailMap">
+        select
+            a.*, b.type_name
+        from food a,food_type b
+        where a.type_id = b.type_id and b.type_id = #{typeId,jdbcType=INTEGER}
     </select>
 </mapper>

@@ -4,10 +4,7 @@ import com.example.myfood.dao.FoodDao;
 import com.example.myfood.dao.FoodOtherDao;
 import com.example.myfood.dao.FoodTypeDao;
 import com.example.myfood.dao.UserDao;
-import com.example.myfood.entity.Food;
-import com.example.myfood.entity.FoodOther;
-import com.example.myfood.entity.FoodType;
-import com.example.myfood.entity.User;
+import com.example.myfood.entity.*;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -60,6 +57,12 @@ private FoodTypeDao foodTypeDao;
     public void getFoodTypes(){
         List<FoodType> foodTypes = foodTypeDao.selectFoodTypes();
         foodTypes.forEach(System.out::println);
+    }
+
+    @Test
+    public void getFoodDetailByTypeId(){
+        List<FoodDetail> foodDetails = foodDao.selectFoodByType(1);
+        foodDetails.forEach(System.out::println);
     }
 
     @Test
